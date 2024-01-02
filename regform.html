@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+.logo {
+  position: absolute;
+  margin-top: 15px;
+  font-size: 16px;
+  margin-left: 13px;
+}
+
+.logo h1 {
+   font-family: Segoe UI, Helvetica, calibri, serif;
+   margin-top: 4px;
+}
+
+#menu {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  cursor: pointer;
+  display: none;
+}
+
+#close {
+   position: absolute;
+   top: 17px;
+   right: 20px;
+   cursor: pointer;
+   display: none;
+}
+
+nav ul {
+  display: block;
+  float: right;
+  overflow: hidden;
+  margin: 7px 0;
+  margin-right: 10px;
+}
+
+nav ul li {
+  list-style-type: none;
+  float: left;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 617px) {
+  .logo {
+    margin-top: 7px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    font-size: 14px;
+  }
+   .logo h1 {
+      position: relative;
+      margin-bottom: 10px;
+   }
+  nav {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+  }
+  nav ul {
+    padding-top: 20px;
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+  .nav-expanded {
+    display: block;
+  }
+  nav ul li {
+    float: none;
+    border-bottom: 2px solid #D8D8D8;
+  }
+  nav ul li:last-child {
+    border-bottom: none;
+  }
+  #menu {
+    display: block;
+  }
+}
+/*Navigation Bar*/
+
+
+body{
+  height: 100vh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.maincon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{  
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  margin-top: 80px;
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 155px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+nav ul li a:hover{
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 5px;
+  transform: scale(1.2,1.2);
+  background-color: orange;
+}
+    </style>
+</head>
+<body>
+    
+  <!--Navigation Bar-->
+  <div class="logo">
+    <h1> </h1>
+  </div>
+   <span id="close"> <img style="width: 25px;" src="http://www.pvhc.net/img5/onbbqnqzkjrtvirmiqnp.png" alt="CLOSE"> </img> </span>
+  <span id="menu"> <img style="width: 25px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR11WXR-a18XfNZknL7S4lu0lLyC4aWZPY4sLd4wNHUNv9So2gd" alt="MENU"> </span>
+  <nav>
+    <ul>
+      <li> <a href="/"> HOME </a> </li>
+      <li> <a href="/about"> ABOUT </a> </li>
+      <li> <a href="/form"> FORM </a> </li>
+      <li> <a href="/contact"> CONTACT </a> </li>
+      <li> <a href="login"> LOGIN </a> </li>
+
+    </ul>
+  </nav>
+<!--Navigation Bar-->
+  <div class="maincon">
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="/fdata" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="uname" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="passwd" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">             
+            <span class="details">Phone Number</span>
+            <input type="number" name="phone" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Add Color</span>
+            <input type="color" name="color" placeholder="Select your color" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender" name="">TransGender</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+    
+</body>
+</html>
